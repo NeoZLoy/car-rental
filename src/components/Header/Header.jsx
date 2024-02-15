@@ -1,28 +1,31 @@
-import { NavLink } from 'react-router-dom';
-import {ReactComponent as Logo} from '../../images/icons/logo.svg';
+import { LogoText, StyledLink, StyledList, StyledLogo, StyledLogoWrapper } from './Header.styled';
 
 export const Header = () => {
-    <ul>
-        <li>
-            <NavLink to = "/">
-                <span>
-                    Car
-                </span>
-                <Logo/>
-                <span>
-                    Rental
-                </span>
-            </NavLink>
-        </li>
-        <li>
-            <NavLink to="/catalog">
-                Catalog
-            </NavLink>
-        </li>
-        <li>
-            <NavLink to="/favorites">
-                Favorites
-            </NavLink>
-        </li>
-    </ul>
+    return (
+        <nav>
+        <StyledList>
+            <li>
+                    <StyledLink to = "/">
+                        <LogoText>
+                            Car
+                        </LogoText>
+                        <StyledLogo/>
+                        <LogoText>
+                            Rental
+                        </LogoText>
+                    </StyledLink>
+            </li>
+            <li>
+                <StyledLink to="/catalog">
+                    Catalog
+                </StyledLink>
+            </li>
+            <li>
+                <StyledLink to="/favorites">
+                    Favorites
+                </StyledLink>
+            </li>
+        </StyledList>
+    </nav>
+    )
 }

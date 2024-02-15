@@ -1,4 +1,4 @@
-import { SliderComponent } from "components/Slider/Slider"
+import { SliderComponent } from "../../components/Slider/Slider"
 import { FavoritesButton } from "../../components/FavoritesButton/FavoritesButton"
 import { CatalogButton } from "../../components/CatalogButton/CatalogButton"
 import { HomeButton } from "../../components/HomeButton/HomeButton"

@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { lazy } from "react"; 
-import { HomePage } from "pages/HomePage/HomePage";
-import { Catalog } from "pages/Catalog/Catalog";
-import { Favorites } from "pages/Favorites/FavoritesPage";
 import { Layout } from "./Layout";
+import { HomePage } from "../pages/HomePage/HomePage";
+import { Catalog } from "../pages/Catalog/Catalog";
+import { Favorites } from "../pages/Favorites/FavoritesPage";
+
 
 // const Home = lazy(() => import('../pages/HomePage/HomePage.jsx'));
 // const Catalog = lazy(() => import('../pages/Catalog/Catalog.jsx'));

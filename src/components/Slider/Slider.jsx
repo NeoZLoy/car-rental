@@ -1,5 +1,5 @@
-import { Advantages } from "components/Advantages/Advantages";
-import { FAQ } from "components/FAQ/FAQ";
+import { Advantages } from "../Advantages/Advantages";
+import { FAQ } from "../FAQ/FAQ";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

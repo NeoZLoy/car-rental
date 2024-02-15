@@ -1,3 +1,5 @@
+import { CarList } from "../../components/CarList/CarList"
+
 export const Catalog = () => {
     return(
         <section>
@@ -5,7 +7,7 @@ export const Catalog = () => {
                 Filters
             </div>
             <div>
-                Car list
+                <CarList/>
             </div>
         </section>
     )
