@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
+import {ReactComponent as Favorites} from '../../images/icons/favorites.svg';
+
 
 export const StyledCardWrapper = styled.div`
+position: relative;
 width: 274px;
 `
 
@@ -52,5 +55,30 @@ cursor: pointer;
 font-size: 14px;
 color: #fff;
 font-weight: 600;
-
 `
+
+export const StyledFavIcon = styled(Favorites)`
+fill: ${props => props.$isfav ? '#3470FF' : 'black'}; /* Измените цвет иконки в зависимости от значения пропа $isfav */
+width: 16px;
+height: 16px;
+&:hover{
+    fill: currentColor;
+    transform: scale(1.5);
+}
+`
+
+export const StyledFavButton = styled.button`
+position: absolute;
+top: 16px;
+right: 15px;
+width: 16px;
+height: 16px;
+background: none;
+outline: none;
+border: none;
+cursor: pointer;
+&:hover{
+    color: #3470FF;
+}
+`
+

@@ -3,19 +3,35 @@ import { createSlice } from "@reduxjs/toolkit"
 const filters = createSlice({
     name: 'filters',
     initialState:{
-        maker: '',
-        price: '',
-        milage: '',
+        make: '',
+        price: {
+            min: 0,
+            max: 0,
+        },
+        milage: {
+            min: 0,
+            max: 0,
+        },
 
     },
     reducers:{
-        filterCatalog(state, action){
-            state.maker = action.payload.maker;
-            state.price = action.payload.price;
-            state.milage = action.payload.milage;
+        makeFilter(state, action){
+            state.make = action.payload;
+        },
+        minPriceFilter(state, action){
+            state.price.min = action.payload;
+        },
+        maxPriceFilter(state, action){
+            state.price.max = action.payload;
+        },
+        minMilageFilter(state, action){
+            state.milage.min = action.payload;
+        },
+        maxMilageFilter(state, action){
+            state.milage.max = action.payload;
         }
     }
 })
 
 export const filtersReducer = filters.reducer;
-export const {filterCatalog} = filters.actions;
+export const {makeFilter, minPriceFilter, maxPriceFilter, minMilageFilter, maxMilageFilter} = filters.actions;
