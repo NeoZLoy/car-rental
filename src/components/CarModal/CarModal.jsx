@@ -1,60 +1,92 @@
-import { Modal } from "@mui/material"
-import { BlackText, BlueText, StyledDescription, StyledTitle } from "components/CarCard/CarCard.styled"
+import { Modal, Box } from '@mui/material';
+import { BlackText, BlueText, StyledTitle } from "components/CarCard/CarCard.styled"
 import { StyledList } from "components/CarList/CarList.styled"
-
+import { v4 as uuidv4 } from 'uuid';
+import { CarDescription, CloseButton, CloseIcon, StyledAcc, StyledAccItem, StyledAccList, StyledButton, StyledConditionItem, StyledConditionList, StyledConditionSpan, StyledDescription, StyledImage, StyledSubtitle, StyledTitleWrapper } from './CarModal.styled';
 
 export const CarModal = ({open, handleClose, car}) => {
 
+    const address = car.address.split(', ');
+    const country = address[address.length - 1];
+    const city = address[address.length - 2];
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 541,
+        bgcolor: '#fff',
+        boxShadow: 24,
+        borderRadius: '24px',
+        p: "40px",
+      };
+      
+
     const carConditions = car.rentalConditions.split('\n');
-    console.log(carConditions)
+
+    const mileage = car.mileage.toLocaleString('en-US')
+
     return (<Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div>
-            <img src={car.image} alt={car.make}/>
-            <StyledTitle>
-                <p>
-                    <BlackText>{car.make} </BlackText> 
-                    <BlueText>{car.model} </BlueText> 
-                    <BlackText>{car.year} </BlackText> 
-                </p>
-                <p>
-                    <BlackText>{car.rentalPrice}</BlackText>
-                </p> 
-            </StyledTitle>
-                <StyledDescription>
-                    {car.address.split(',')[1]} | {car.rentalCompany} | {car.type} | {car.model} | {car.mileage} | {car.functionalities[0]}
-            </StyledDescription>
-            <p>
+        <Box sx={style}>
+            <CloseButton onClick={handleClose}><CloseIcon/></CloseButton>
+            <StyledImage src={car.img} alt={car.make}/>
+            <StyledTitleWrapper>
+                <StyledTitle>
+                    <p>
+                        <BlackText>{car.make} </BlackText> 
+                        <BlueText>{car.model} </BlueText> 
+                        <BlackText>{car.year} </BlackText> 
+                    </p>
+                </StyledTitle>
+                    <StyledDescription>
+                        {city} | {country} | {`id: ${car.id}`} | {`Year ${car.year}`} | {`Type: ${car.type}`}| {`Fuel Consumption: ${car.fuelConsumption}`} | {`Engine size: ${car.engineSize}`}
+                </StyledDescription>
+            </StyledTitleWrapper>
+         
+            <CarDescription>
                 {car.description}
-            </p>
+            </CarDescription>
             <div>
-                <h4>Accessories and functionalities:</h4>
-                    <StyledList>
-                        {car.accessories.map(acc => (
-                            <li key={Math.random}>{acc}</li>
-                        ))}
-                        {car.functionalities.map(func => (
-                            <li key={Math.random}>{func}</li>
-                        ))}
-                    </StyledList>
+                <StyledSubtitle>Accessories and functionalities:</StyledSubtitle>
+                    <StyledAcc>
+                        <StyledAccList>
+                            {car.accessories.map(acc => (
+                                <StyledAccItem key={uuidv4()}>{acc}</StyledAccItem>
+                            ))}
+                        </StyledAccList> 
+                        <StyledAccList>
+                            {car.functionalities.map(func => (
+                                <StyledAccItem key={uuidv4()}>{func}</StyledAccItem>
+                            ))}
+                        </StyledAccList>                    
+                    </StyledAcc>
             </div>
             <div>
-                <h4>Rental Conditions: </h4>
-                <StyledList>
+                <StyledSubtitle>Rental Conditions: </StyledSubtitle>
+                <StyledConditionList>
                     {carConditions.map(condition => (
-                        <li key={Math.random}>{condition}</li>
+                        <StyledConditionItem key={uuidv4()}>
+                            <span>
+                            {condition.split(':')[0]}
+                            </span>
+                            <StyledConditionSpan>
+                            {condition.split(':')[1]}
+                            </StyledConditionSpan>
+                        </StyledConditionItem>
                     ))
                     }
-                    <li >Mileage: <span>{car.milage}</span></li>
-                    <li>Price: <span>{car.rentalPrice}</span></li>
-                </StyledList>
-                <a href="tel:+380730000000">Rental Car</a>
+                    <StyledConditionItem >Mileage: <StyledConditionSpan>{mileage}</StyledConditionSpan></StyledConditionItem>
+                    <StyledConditionItem>Price: <StyledConditionSpan>{car.rentalPrice}</StyledConditionSpan></StyledConditionItem>
+                </StyledConditionList>
+                <StyledButton href="tel:+380730000000">Rental Car</StyledButton>
             </div>
-        </div>
+        </Box>
         
       </Modal>
 )}

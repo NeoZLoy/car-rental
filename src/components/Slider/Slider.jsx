@@ -4,6 +4,7 @@ import { FAQ } from "../FAQ/FAQ";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { StyledContainer } from "./Slider.styled";
 
 
 
@@ -17,27 +18,18 @@ export const SliderComponent = () => {
         slidesToScroll: 1,
         autoplay: true,
         pauseOnHover: true,
-        autoplaySpeed: 3000,
-
+        autoplaySpeed: 5000,
     }
 
     return(
         <Slider {...sliderSettings}>
-            <div>
+            <StyledContainer>
                 <Advantages/>
-            </div>
+            </StyledContainer>
 
-            <div>
+            <StyledContainer>
                 <FAQ/>
-            </div>
-
-            <div>
-
-            </div>
-
-            <div>
-
-            </div>
+            </StyledContainer>
         </Slider>
     )
 }

@@ -6,6 +6,7 @@ flex-wrap: wrap;
 gap: 50px 30px;
 list-style: none;
 margin: 0 auto;
+justify-content: center;
 `
 
 export const LoadMoreButton = styled.button`
@@ -21,6 +22,10 @@ cursor: pointer;
 height: 24px;
 margin: 0 auto;
 margin-top: 100px;
+
+&:hover{
+    color: #0B44CD;
+}
 `
 
 export const StyledWrapper = styled.section`

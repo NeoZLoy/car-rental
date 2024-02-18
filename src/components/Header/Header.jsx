@@ -1,8 +1,8 @@
-import { LogoText, StyledLink, StyledList, StyledLogo, StyledLogoWrapper } from './Header.styled';
+import { LogoText, StyledLink, StyledList, StyledLogo, StyledLogoWrapper, StyledNav } from './Header.styled';
 
 export const Header = () => {
     return (
-        <nav>
+        <StyledNav>
         <StyledList>
             <li>
                     <StyledLink to = "/">
@@ -26,6 +26,6 @@ export const Header = () => {
                 </StyledLink>
             </li>
         </StyledList>
-    </nav>
+    </StyledNav>
     )
 }

@@ -21,12 +21,13 @@ display: flex;
 align-items: center;
 margin-right: 20px;
 text-decoration: none;
+font-weight: 500;
 cursor: pointer;
 text-transform: uppercase;
-color: blue;
+color: #3470FF;
 
 &:hover{
-    color: orangered;
+    color: #0B44CD;
 }
 `
 
@@ -34,4 +35,8 @@ export const StyledList = styled.ul`
 display: flex;
 align-items: center;
 justify-content: center;
+`
+
+export const StyledNav = styled.nav`
+margin-top: 24px;
 `

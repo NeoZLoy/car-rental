@@ -55,6 +55,10 @@ cursor: pointer;
 font-size: 14px;
 color: #fff;
 font-weight: 600;
+
+&:hover{
+    background-color: #0b44cd; 
+}
 `
 
 export const StyledFavIcon = styled(Favorites)`
