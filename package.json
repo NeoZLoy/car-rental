@@ -2,7 +2,7 @@
   "name": "car-rental",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/NeoZLoy/car-rental",
+  "homepage": "https://neozloy.github.io/car-rental/",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
