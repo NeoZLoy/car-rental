@@ -22,7 +22,6 @@ export const CarCard = ({car}) => {
     const favList = useSelector(selectFavArr)
 
     const handleFavClick = (event) => {
-        const card = event.currentTarget;
         const carId = event.target.closest('.carCard').getAttribute('carid');
         dispatch(toggleFavorites(carId));
     }

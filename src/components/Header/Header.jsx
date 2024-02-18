@@ -1,4 +1,4 @@
-import { LogoText, StyledLink, StyledList, StyledLogo, StyledLogoWrapper, StyledNav } from './Header.styled';
+import { LogoText, StyledLink, StyledList, StyledLogo, StyledNav } from './Header.styled';
 
 export const Header = () => {
     return (

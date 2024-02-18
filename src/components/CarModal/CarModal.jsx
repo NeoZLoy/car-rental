@@ -1,6 +1,5 @@
 import { Modal, Box } from '@mui/material';
 import { BlackText, BlueText, StyledTitle } from "components/CarCard/CarCard.styled"
-import { StyledList } from "components/CarList/CarList.styled"
 import { v4 as uuidv4 } from 'uuid';
 import { CarDescription, CloseButton, CloseIcon, StyledAcc, StyledAccItem, StyledAccList, StyledButton, StyledConditionItem, StyledConditionList, StyledConditionSpan, StyledDescription, StyledImage, StyledSubtitle, StyledTitleWrapper } from './CarModal.styled';
 

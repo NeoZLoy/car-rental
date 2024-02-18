@@ -1,5 +1,5 @@
 import { CarCard } from "../CarCard/CarCard";
-import { selectCatalog, selectError, selectIsLoading, selectPaginatedCatalog } from "../../Store/catalog/catalog.selectors";
+import { selectCatalog, selectPaginatedCatalog } from "../../Store/catalog/catalog.selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchAllCatalog, fetchCatalog } from "../../Store/catalog/catalog.operations";
@@ -15,16 +15,14 @@ export const CarList = () => {
 
     const paginatedCatalog = useSelector(selectPaginatedCatalog);
     const allCatalog = useSelector(selectCatalog);
-    const isLoading = useSelector(selectIsLoading);
-    const error = useSelector(selectError);
 
-    const [page, setPage] = useState(1);
+    const page = 1;
     const [limit, setLimit] = useState(12);
     const maxCards = 39;
 
     useEffect(() => {
         dispatch(fetchCatalog({ page, limit }));
-    }, [dispatch, page, limit]);
+    }, [dispatch, limit]);
 
     const makeFilter = useSelector(selectMake);
         

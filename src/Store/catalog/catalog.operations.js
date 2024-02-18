@@ -27,7 +27,7 @@ export const fetchAllCatalog = createAsyncThunk('/catalog', async(_, thunkAPI) =
 export const fetchCarById = createAsyncThunk('/catalog/id', async (id, thunkAPI) => {
     try {
         const res = await axios.get(`/catalog/${id}`)
-        return
+        return res.data
     } catch (error) {
         
     }

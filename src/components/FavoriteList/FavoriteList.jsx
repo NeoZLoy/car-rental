@@ -1,4 +1,4 @@
-import { fetchAllCatalog, fetchCarById } from "Store/catalog/catalog.operations";
+import { fetchAllCatalog } from "Store/catalog/catalog.operations";
 import { selectCatalog, selectIsLoading } from "Store/catalog/catalog.selectors"
 import { selectFavArr } from "Store/favorites/favorites.selectors";
 import { CarCard } from "components/CarCard/CarCard";
